@@ -1,0 +1,891 @@
+
+/*全体共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+body{
+	font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.75;
+	font-size: 20px;
+}
+
+
+/*パディングをサイズ内側にする処理*/
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+/* ヘッダーロゴ */
+.link_top{
+  display: flex;
+}
+.top_text{
+  padding: 10px;
+  /* margin: 10px auto 0; */
+  color: black;
+}
+/*top背景*/
+.wrap{
+    background: url(../img/入学式.jpeg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_title_box {
+    justify-content:center;
+    align-items:center;
+    font-size: 24px;
+    color: white;
+    text-shadow: 1px 1px 2px gray;
+    line-height: 3em;
+}
+ 
+/*以下フェードイン表示の指定*/
+.fadein {
+    opacity: 0;
+    animation:fadein 6s ease forwards;
+}
+@keyframes fadein {
+    100% {  opacity: 1;}
+}
+ 
+/*以下表示速度の指定*/
+.txt01 {animation-delay: 1s;}
+.txt02 {animation-delay: 4s;}
+.txt03 {animation-delay: 7s;}
+.txt04 {animation-delay: 10s;}
+.txt05 {animation-delay: 13s;}
+.txt06 {animation-delay: 16s;}
+
+/*TOPメニュー_ここから*/
+nav ul{
+display: table;
+width: 100%;
+text-align: center;
+}
+nav li{
+display: table-cell;
+min-width: 50px;
+}
+nav a{
+display: block;
+width: 100%;
+text-decoration: none;
+color:black;
+padding-bottom: 5px;
+}
+nav li.top{
+border-bottom: 3px solid black;
+}
+nav li:hover{
+color: #E7DA66;
+border-bottom: 3px solid #F0E475;
+}
+
+ul a {
+display: block;
+padding: 45px 0 15px;
+margin-left: 1rem;
+width: 100%;
+text-align: center;
+font-size: 1.3rem;
+color: black;
+font-weight: bold;
+}
+
+ul a::after {
+    display: block;
+    font-size: 1.0rem;
+    font-weight: lighter;
+}
+/* 日本語表記_ここから */
+.menu_top a::after {
+    content: "トップ";
+}
+.about a::after {
+    content: "チーズアカデミーとは";
+}
+.course a::after {
+    content: "コース紹介";
+}
+.infogra a::after{
+  content: "数字でみるチーズアカデミー";
+}
+.news a::after {
+    content: "お知らせ・最新情報";
+}
+.access a::after {
+    content: "所在地";
+}
+.contact a::after {
+    content: "お問い合わせ";
+}
+/* 日本語表記_ここまで */
+/* TOPメニュー_ここまで */
+.text_about{
+  text-align: center;
+  margin: 120px 0px;
+}
+.text_title_about{
+  margin: 24px auto 0;
+  width: 100%;
+  align-items:center;
+  text-align: center;
+  color: orange;
+}
+.text_title_details_about{
+  margin: 64px auto 0;
+  width: 100%;
+  align-items:center;
+  text-align: center;  
+} 
+.text_title_details_about_text01{
+  padding-bottom: 50px;
+  width: 100%;
+}
+.text_title_details_about_text02{
+  padding-bottom: 50px;
+  width: 100%;
+}
+/*スライド画像_ここから*/
+@keyframes scroll{
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 2));
+  }
+}
+.slider {
+  width: 100%;
+  background: white;
+  height: 200px;
+  margin: auto;
+  overflow:hidden;
+  position: relative;
+  /* border:1px solid #e5e5e5; */
+}
+.slider-wrap {
+    animation: scroll 10s linear infinite;
+    display: flex;
+    width: calc(250px * 2);
+    width:100%;
+    height:100%;
+  }
+.slide-image{
+  width:1400px;
+  height:100%;
+  object-fit:cover;
+}
+.slide{
+  width:100%;
+  height:100%;
+  /* text-align:center; */
+}
+/*スライド画像_ここまで*/
+/* course_ここから */
+.text_title_course{
+  margin: 24px auto 0;
+  width: 100%;
+  text-align: center;
+  color: orange;
+}
+
+.text_title_details_course{
+  text-align: center;
+  padding:64px;
+}
+
+.marker_yellow{
+  background: linear-gradient(transparent 60%, #ffff66 60%);
+}
+/*course01画像配置*/
+.course_01 {
+  display: flex;
+  text-align: center;
+  justify-content:center;
+  align-items:center;
+}
+/* 画像にマウスオーバーしたら動く使用 */
+/* .course_01 img:hover {
+  opacity: 1.0;
+  transform: scale(1.1, 1.1);
+} */
+.course_01_detail{
+  background-size: cover;
+  text-align:center;
+  margin:80px;
+}
+/*course02画像配置*/
+.course_02 {
+  display: flex;
+  text-align: center;
+  justify-content:center;
+  align-items:center;
+}
+.course_02_detail{
+  text-align: center;
+  margin: 72px;
+}
+/*course03画像配置*/
+.course_03 {
+  display: flex;
+  text-align: center;
+  justify-content:center;
+  align-items:center;
+}
+.course_03_detail{
+  text-align: center;
+    margin: 72px;
+}
+/* グラフタイトル */
+.text_title_infogra{
+  margin: 150px auto 0;
+  width: 100%;
+  align-items:center;
+  text-align:center;
+  color: orange;
+}
+.text_subtitle_infogra{
+  width: 100%;
+  align-items:center;
+  text-align:center;
+}
+.flex_container_infogra{
+  margin: 30px auto 0;
+	display: flex;
+  justify-content:space-around;
+  vertical-align:top;
+  text-align: center;
+}
+
+/* カウンター１_ここから */
+/* .lead{
+  padding: 20px;
+  text-align: center;
+} */
+.counter1{
+width: 300px;
+height: 200px;
+}
+.box1{
+  max-width:400px;
+  width:100%;
+  margin: 20px auto ;
+  /* padding: 0px; */
+  background:#fff;
+  text-align: center;
+}
+.box2{
+  max-width:400px;
+  width:100%;
+  margin: 55px auto;
+  padding: 0px;
+  background:#fff;
+  text-align: center;
+}
+
+.startup{
+  font-size:6rem;
+  font-weight: bold;
+  color:orange;
+}
+.funding{
+  font-size:3.8rem;
+  font-weight: bold;
+  color:orange;
+}
+/* カウンター_ここまで */
+.graph{
+width: 300px;
+height: 200px;
+}
+
+
+.anime-chart {
+  margin: 20px auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.anime-chart *,
+.anime-chart::before {
+  box-sizing: border-box;
+}
+
+.anime-chart {
+  position: relative;
+  width: 350px;
+  height: 175px;
+  overflow: hidden;
+}
+
+.anime-chart::before,
+.anime-chart::after {
+  position: absolute;
+}
+
+.anime-chart::before {
+  content: '';
+  width: inherit;
+  height: inherit;
+  /* border: 80px solid rgba(211, 211, 211, .3); */
+  border-bottom: none;
+  border-top-left-radius: 175px;
+  border-top-right-radius: 175px;
+}
+
+.anime-chart::after {
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  font-size: 1.1rem;
+  font-weight: bold;
+  /* color: cadetblue; */
+}
+
+.anime-chart li {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border: 80px solid;
+  border-top: none;
+  border-bottom-left-radius: 175px;
+  border-bottom-right-radius: 175px;
+  transform-origin: 50% 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  animation-fill-mode: forwards;
+  animation-duration: .4s;
+  animation-timing-function: linear;
+}
+
+.anime-chart li:nth-child(1) {
+  z-index: 4;
+  border-color:darkorange;
+  animation-name: rotate-one;
+}
+
+.anime-chart li:nth-child(2) {
+  z-index: 3;
+  border-color: orange;
+  animation-name: rotate-two;
+  animation-delay: .4s;
+}
+
+.anime-chart li:nth-child(3) {
+  z-index: 2;
+  border-color:gold;
+  animation-name: rotate-three;
+  animation-delay: .8s;
+}
+
+.anime-chart li:nth-child(4) {
+  z-index: 1;
+  border-color:lightgoldenrodyellow;
+  animation-name: rotate-four;
+  animation-delay: 1.2s;
+}
+
+.anime-chart span {
+  position: absolute;
+  font-size: .85rem;
+  backface-visibility: hidden;
+  animation: fade-in .4s linear forwards;
+}
+
+.anime-chart li:nth-child(1) span {
+  top: 48px;
+  left: 20px;
+  transform: rotate(-66.6deg);
+}
+
+.anime-chart li:nth-child(2) span {
+  top: 35px;
+  left: 10px;
+  transform: rotate(-117.0deg);
+  animation-delay: .4s;
+}
+
+.anime-chart li:nth-child(3) span {
+  top: 20px;
+  left: 10px;
+  transform: rotate(-156.6deg);
+  animation-delay: .8s;
+}
+
+.anime-chart li:nth-child(4) span {
+  top: 10px;
+  left: 10px;
+  transform: rotate(-180deg);
+  animation-delay: 1.2s;
+}
+
+
+/* アニメーション
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@keyframes rotate-one {
+  100% {
+    transform: rotate(66.6deg);
+    /**
+     * 37% => 66.6deg
+     */
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    transform: rotate(66.6deg);
+  }
+  100% {
+    transform: rotate(117.0deg);
+    /**
+     * 28% => 50.4deg 
+     * 66.6 + 50.4 => 117.0deg
+     */
+  }
+}
+
+@keyframes rotate-three {
+  0% {
+    transform: rotate(117.0deg);
+  }
+  100% {
+    transform: rotate(156.6deg);
+    /**
+     * 22% => 39.6deg 
+     * 117+ 39.6 => 156.6deg
+     */
+  }
+}
+
+@keyframes rotate-four {
+  0% {
+    transform: rotate(156.6deg);
+  }
+  100% {
+    transform: rotate(180deg);
+    /**
+     * 13% => 23.4deg  
+     * 156.6 + 23.4 => 180deg
+     */
+  }
+}
+
+@keyframes fade-in {
+  0%,
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* 数字でみるチーズアカデミー_ここまで */
+/* ニュースタイトル */
+.text_title_news{
+  margin: 150px auto 0;
+  width: 100%;
+  align-items:center;
+  text-align: center;
+  color: orange;
+}
+/* ニュース_親要素(コンテナ) */
+.flex_container_news {
+  margin: 30px auto 0;
+	display: flex;
+  justify-content:space-around;
+}
+/* ニュース_詳細 */
+.news_details{
+ font-size: 16px;
+}
+/* ニュース_子要素(アイテム) */
+/* .flex-item_news { */
+	/* margin: 10px auto;
+	padding: 5px 10px; */
+  /* justify-content:center;
+  align-items:center;
+	box-sizing: border-box;
+	color: black;
+} */
+/* 続きを読むボタン＿ここから */
+.viewmore_button {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    margin: 30px auto 0;
+    background-color:white;
+    cursor: pointer;
+    border: 1px solid gray;
+    color:gray;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.5;
+    outline: none;
+    -webkit-transition: all .3s;
+    transition: all .5s;
+    padding: 20px 100px;
+}
+ 
+.viewmore_button:hover {
+    background:black;
+    color: white;
+    border: 1px solid black;
+}
+/* 続きを読むボタン＿ここまで */
+/* ニュース_ここまで */
+/* ---------------------------------- */
+/* 地図_ここから */
+.text_title_access{
+  text-align: center;
+  padding-top: 150px;
+}
+.text_subtitle_access{
+  text-align: center;
+}
+
+.text_title_access_detail {
+  margin: 20px auto;
+}
+.googlemap{
+  text-align: center;
+}
+/* 地図_ここまで */
+/* ---------------------------------- */
+/* contact説明文_ここから */
+.text_title_contact{
+ text-align: center;
+ padding-top: 150px;
+ color: tomato;
+}
+.text_contact_detail01{
+ text-align: center;
+}
+/* 問い合わせ説明文 */
+.text_contact_detail02{
+ text-align: center;
+ margin: 50px 0px; 
+}
+/* 問い合わせ注意文 */
+.text_contact_detail03{
+ text-align: center;
+ margin: 50px 0px; 
+}
+/* contact説明文_ここまで */
+/* ---------------------------------- */
+/* お問い合わせフォーム */
+.form_group {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+}
+@media screen and (max-width: 480px) {
+  .form_group {
+    margin-top: 40px;
+  }
+}
+.form_item {
+  border-top: 1px solid #ddd;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .form_item {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    flex-wrap: wrap;
+  }
+}
+.form_item:nth-child(5) {
+  border-bottom: 1px solid #ddd;
+}
+.form_item_label{
+  width: 100%;
+  max-width: 248px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .form_item_label{
+    max-width: inherit;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+}
+.form_item_label.msg {
+  margin-top: 8px;
+  margin-bottom: auto;
+}
+@media screen and (max-width: 480px) {
+  .form_item_label.msg {
+    margin-top: 0;
+  }
+}
+
+/* 必須のアイコン_ここから*/
+.form_item_label_must {
+  border-radius: 6px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 48px;
+  display: inline-block;
+  text-align: center;
+  background:tomato;
+  color: #fff;
+  font-size: 14px;
+}
+@media screen and (max-width: 480px) {
+  .form_item_label_must {
+    border-radius: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 32px;
+    font-size: 10px;
+  }
+}
+/* 必須のアイコン_ここまで*/
+/* 入力BOX _ここから */
+.form_item_input {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 48px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+.form_checkbox{
+  padding-left: 45px;
+  padding-right:45px;
+  flex-direction: column;
+  justify-content:space-around;
+  font-size: 16px;
+}
+@media screen and (max-width: 480px) {
+  .form_item_input {
+    margin-left: 0;
+    margin-top: 18px;
+    height: 40px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+/* 入力BOX _ここまで */
+/* 詳細＿ここから */
+.form_item_textarea {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 216px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+.form_item_textarea {
+    margin-top: 18px;
+    margin-left: 0;
+    height: 200px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+/* 詳細 _ここまで */
+/* 送信ボタン＿ここから */
+.submit_button {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    margin: 30px auto 0;
+    background-color:tomato;
+    cursor: pointer;
+    border: 1px solid tomato;
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.5;
+    outline: none;
+    -webkit-transition: all .3s;
+    transition: all .5s;
+    padding: 20px 100px;
+}
+ 
+.submit_button:hover {
+    background:black;
+    color: white;
+    border: 1px solid black;
+}
+/* 送信ボタン＿ここまで */ 
+/* ---------------------------------- */
+/* ページトップに戻るボタン */
+#page_top{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+/* ページトップに戻るボタン_ここまで */
+/* コピーライト_ここから */
+.copyrights{
+background-color:lightgrey;
+background-size: 34px;
+color: white;
+font-size:18px ;
+margin: 100px auto 0;
+padding: 100px;
+/* justify-content: center; */
+text-align: center;
+}
+/* SNSアイコン */
+.pattern-03{
+  display:flex;
+  justify-content:center;
+}
+
+/*アイコンの背景色が変わる*/
+.pattern-03 .icon-wrap {
+    display: block;
+    color:gray;
+}
+ 
+.pattern-03 .icon-wrap.icon-wrap-instagram {
+    /* Instagramのアイコンは縦に長い(= 正方形ではない)ので左右のpaddingを少し多めにとる */
+    padding: 7px 9.125px;
+}
+ 
+.pattern-03 .icon-wrap.icon-wrap-facebook,
+.pattern-03 .icon-wrap.icon-wrap-twitter {
+    /* facebookとTwitterのアイコンは正方形なので、上下左右のpaddingの値は同じ */
+    padding: 7px;
+}
+ 
+/* .pattern-03 .icon-wrap.icon-wrap-line {
+    LINEのアイコンは縦に長い(= 正方形ではない)ので左右のpaddingを少し多めにとる */
+    /* padding: 7px 10px;
+} */
+ 
+.pattern-03 .icon-wrap:hover {
+    color: white;
+}
+ 
+/* .pattern-03.square .icon-wrap:hover {
+    border-radius: 25%; 
+    /* 正方形  border-radiusは角を丸くする*/
+/* }  */
+ 
+.pattern-03.circle .icon-wrap:hover {
+    border-radius: 50%; /* 円 */
+} 
+ 
+.pattern-03 .icon-wrap:hover.icon-wrap-instagram {
+    /* 【参考】 https://bungujoshi.com/ */
+    /* radial-gradientはグラデーションを生成するタグ */
+    background: -webkit-radial-gradient(32% 106%,circle cover,palegoldenrod 0%,gold 10%,orange 28%,red 42%, transparent 82%),-webkit-linear-gradient(-45deg,royalblue 12%,mediumorchid 58%);
+    background: radial-gradient(32% 106%,circle cover,palegoldenrod 0%,gold 10%,orange 28%,red 42%, transparent 82%), linear-gradient(-45deg,royalblue 12%,mediumorchid 58%);
+    background: radial-gradient(32% 106%,circle cover,palegoldenrod 0%,gold 10%,orange 28%,red 42%, transparent 82%), linear-gradient(-45deg,royalblue 12%,mediumorchid 58%);
+    background: radial-gradient(32% 106%,circle cover,palegoldenrod 0%,gold 10%,orange 28%,red 42%, transparent 82%), linear-gradient(-45deg,royalblue 12%,mediumorchid 58%);
+    background: radial-gradient(circle farthest-corner at 32% 106%,palegoldenrod 0%,gold 10%,orange 28%,red 42%, transparent 82%), linear-gradient(135deg,royalblue 12%,mediumorchid 58%);
+}
+ 
+.pattern-03 .icon-wrap:hover.icon-wrap-facebook {
+    background-color:dodgerblue;
+}
+ 
+.pattern-03 .icon-wrap:hover.icon-wrap-twitter {
+    background-color:deepskyblue;
+  }
+ 
+/* .pattern-03 .icon-wrap:hover.icon-wrap-line {
+    background-color: #00B900;
+} */
+ /* コピーライト_ここまで */
+/* ---------------------------------- */
+
+ 
+ 
+ 
+    
+/*どの部分のcssに対して
+命令をしているのかコメントを
+記載しよう！
+---------------------*/
+
+
+/*
+---------------------*/
+
+
+
+/*
+---------------------*/
+
+
+
+/*
+---------------------*/
+
+
+
+/*
+---------------------*/
